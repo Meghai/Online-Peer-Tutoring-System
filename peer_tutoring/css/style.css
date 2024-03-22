@@ -1,0 +1,240 @@
+body {
+   
+   
+   }
+   
+   .main {
+   
+       background-size: cover;
+       background-position: center;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       height: 100vh;
+      justify-content: center;
+       background-color: #f0f2f5;
+   position:relative;
+   overflow: hidden;
+   }
+   .main::before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       
+       background-size: cover;
+       background-position: center;
+   
+
+   }
+   
+   
+   @keyframes zoomIn {
+       from {
+           opacity: 0;
+           transform: scale(0.5); /* Start from half the size */
+       }
+       to {
+           opacity: 1;
+           transform: scale(1); /* Scale to normal size */
+       }
+   }
+   
+   
+   .container {
+       background-color:rgba(255, 255, 255, 0.7);
+   z-index: 1;
+       display: flex;
+       position: relative;
+       flex-direction: column;
+       width: 400px;
+       height: 400px;
+       align-items: center;
+       border: none;
+       border-radius: 5px;
+       top: 30px;
+       box-shadow:0 0 10px rgba(0,0,0,0.2);
+       gap: 10px;
+     animation: zoomIn 0.7s ease-out forwards;
+   }
+   .login{
+       font-size: 1.2rem;
+       margin: 20px 0 10px 0;
+   }
+   input{
+       width:85%;
+       height:50px;
+       border: 2px solid rgba(0,0,0,0.1);
+       border-radius:5px;
+       font-size: 15px;
+       padding-left:20px;
+       font-weight: 500;
+       color: rgba(0, 0, 0, 0.5);
+       outline-style: none;
+      
+   }
+   .input.input-error {
+    border: 1px solid red;
+  }
+  
+  .input.input-error:focus {
+    border: 1px solid red;
+  }
+  
+  .input:focus {
+    outline: none;
+    border: 1px solid #0084ff;
+    background-clip: padding-box;
+  }
+  
+  .error-message {
+    font-size: 0.85rem;
+    color: red;
+  }
+
+
+   button{
+       width: 90%;
+       height: 50px;
+       border-radius: 5px;
+       border: none;
+       background-color: #1877f2;
+       color: white;
+       font-size: large;
+       font-weight: bold;
+   }
+   a{
+       text-decoration: none;
+       font-size: 14px;
+       margin: 10px;
+       color:#1877f2;
+   }
+   a:hover{
+       text-decoration: Underline;
+   }
+   .new-account{
+       width: 50%;
+       background-color:#42b72a;
+       font-size: 16px;
+       margin: 10px 0 20px 0;
+   }
+   .login-btn:hover{
+       background-color: #1366d1;
+   }
+   .new-account:hover{
+       background-color:#3ba327;
+   }
+   .style{
+       position: relative;
+       text-align: center;
+       font-size: 12px;
+       color: rgba(0,0,0,0.5);
+   }
+   .style::before{
+       content: " ";
+       display: block;
+       height: 0.9px;
+       width: 170px;
+       position: absolute;
+       top: 50%;
+       left: 25px;
+       background-color: rgba(0,0,0,0.2);
+   }
+   .style::after{
+       content: " ";
+       display: block;
+       height: 0.9px;
+       width: 170px;
+       position: absolute;
+       top: 50%;
+       right: 25px;
+       background-color: rgba(0,0,0,0.2);
+   }
+   
+   
+ 
+  .signup-box {
+    width: 375px;
+    height: 641px;
+    margin: auto;
+   
+    position:relative;
+    
+    background-color:rgba(255, 255, 255, 0.7);
+   z-index: 1;
+       display: flex;
+       flex-direction: column;
+       
+       top: 30px;
+       
+       align-items: center;
+       border: none;
+       border-radius: 5px;
+       box-shadow:0 0 10px rgba(0,0,0,0.2);
+     
+     animation: zoomIn 0.7s ease-out forwards;
+    }
+    
+  
+ 
+  
+  
+  form {
+    width: 374px;
+    margin-left: 58px;
+  }
+  
+  form label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  
+  form input {
+    width:85%;
+       height:50px;
+       border: 2px solid rgba(0,0,0,0.1);
+       border-radius:5px;
+       font-size: 15px;
+       padding-left:20px;
+       font-weight: 500;
+       color: rgba(0, 0, 0, 0.5);
+       outline-style: none;
+  }
+  input[type="button"] {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color:  #1877f2;
+    color: white;
+    font-size: 15px;
+  }
+  p {
+    text-align: center;
+    
+    font-size: 15px;
+  }
+  .para-2 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: 0px;
+    padding-top: 32px;
+  }
+  .para-2 a {
+    color:  #1877f2;
+  }
+  .login-box {
+    width: 360px;
+    height: 280px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: white;
+  }
+   .signup{
+    font-size: 1.2rem;
+       margin: 20px 0 10px 0;
+   }
