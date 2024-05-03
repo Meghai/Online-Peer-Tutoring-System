@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+    <title>online peer group login</title>
+    <style>
+        </style>
+</head>
+<body>
+    <!-- <form action="studentdashboard.html"> -->
+    <div class="main">
+        
+        <div class="container">
+            <span class="login">Login to DigiLearn.inc</span>
+            <input type="email" name="email" placeholder="Email address or phone number">
+            <input type="password" name="pass" id="pass" placeholder="Password">
+            <!-- <button class="login-btn" type="submit" onclick="validateonSubmit()">Login</button> -->
+           
+            <!-- Role Selection Dropdown -->
+            <select name="role" id="role-select" class="role-select">
+                <option value="">Select your role</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+            </select>
+
+           
+           
+           
+           
+           
+           
+            <button class="login-btn" type="submit"  onclick="login()">Login</button>
+            <a href="account.html">Forgotten account?</a>
+            <div class="style">or</div>
+        <!-- <a href="signup.html" button class="new-account">Create Account</a> -->
+<button class="new-account" onclick="location.href='signup.html';">Create Account</button>
+
+            <!-- <button class="new-account">Create Account</button> -->
+       
+        </div></form>
+    </div>
+    <script src="/script/login.js"></script>
+    <script>
+        function login() {
+            var role = document.getElementById('role-select').value;
+            var url = '';
+
+            switch (role) {
+                case 'student':
+                    url = 'student/studentdashboard.html';
+                    break;
+                case 'teacher':
+                    url = 'teacher/teacherdashboard.html';
+                    break;
+                case 'admin':
+                    url = 'admin/admindashboard.html';
+                    break;
+                default:
+                    alert('Please select your role.');
+                    return; // Stop the function if no role is selected
+            }
+            // Redirect to the corresponding dashboard
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+ 
+ 

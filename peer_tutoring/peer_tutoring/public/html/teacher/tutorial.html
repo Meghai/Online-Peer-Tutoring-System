@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Manage Tutorials</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/public/css/style2.css">
+</head>
+<body>
+
+<header class="header">
+    <section class="flex">
+        <a href="teacherdashboard.html" class="logo">DigiLearn.inc</a>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+        <div class="profile">
+            <img src="../../../media/pic-4.jpg" class="image" alt="">
+            <h3 class="name">Teacher Name</h3>
+            <p class="role">Teacher</p>
+            <a href="profile.html" class="btn">view profile</a>
+        </div>
+    </section>
+</header>   
+
+<div class="side-bar">
+    <div id="close-btn"><i class="fas fa-times"></i></div>
+    <div class="profile">
+        <img src="../../../media/pic-4.jpg" class="image" alt="">
+        <h3 class="name">Teacher Name</h3>
+        <p class="role">Teacher</p>
+        <a href="profile.html" class="btn">view profile</a>
+    </div>
+    <nav class="navbar">
+        <a href="teacherdashboard.html"><i class="fas fa-home"></i><span>dashboard</span></a>
+        <a href="assignment.html"><i class="fas fa-book"></i><span>assignments</span></a>
+        <a href="tutorial.html"><i class="fas fa-file-pdf"></i><span>tutorials</span></a>
+        <a href="videos.html"><i class="fas fa-video"></i><span>videos</span></a>
+    </nav>
+</div>
+
+<section class="content">
+    <h1 class="heading">Tutorial Management</h1>
+    <div class="boxcontainer">
+        <div class="boxassign">
+            <h3 class="title">Upload New Tutorial</h3>
+            <form action="/upload_tutorial" method="post" enctype="multipart/form-data">
+                <input type="file" name="tutorialFile" accept=".pdf" required>
+                <input type="text" name="tutorialTitle" placeholder="Enter Tutorial Title" required>
+                <button type="submit">Upload Tutorial</button>
+            </form>
+        </div>
+        <div class="boxassign">
+            <h3 class="title">Current Tutorials</h3>
+            <ul>
+                <!-- This list should be populated dynamically with server data -->
+                <li>Tutorial 1 <a href="#">Edit</a> <a href="#">Delete</a></li>
+                <li>Tutorial 2 <a href="#">Edit</a> <a href="#">Delete</a></li>
+                <li>Tutorial 3 <a href="#">Edit</a> <a href="#">Delete</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- custom js file link -->
+<script src="../../script/designscript.js"></script>
+
+
+</body>
+</html>
