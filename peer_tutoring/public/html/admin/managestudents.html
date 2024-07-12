@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Manage Students</title>
+   <!-- Font Awesome for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- Custom CSS link -->
+   <link rel="stylesheet" href="../../css/style2.css">
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="admindashboard.html" class="logo">DigiLearn.inc</a>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+      <div class="profile">
+         <img src="../../../media/admin-pic.jpg" class="image" alt="Admin Picture">
+         <h3 class="name">Admin Name</h3>
+         <p class="role">Administrator</p>
+         <a href="profile.html" class="btn">view profile</a>
+      </div>
+   </section>
+</header>   
+
+<div class="side-bar">
+   <div id="close-btn"><i class="fas fa-times"></i></div>
+   <div class="profile">
+    <img src="../../../media/pic-1.jpg" class="image" alt="">
+    <h3 class="name">Admin Name</h3>
+    <p class="role">Administrator</p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="admindashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+      <a href="managestudents.html"><i class="fas fa-user-graduate"></i> Manage Students</a>
+      <a href="manageteachers.html"><i class="fas fa-chalkboard-teacher"></i> Manage Teachers</a>
+      <!-- <a href="managecourses.html"><i class="fas fa-graduation-cap"></i> Manage Courses</a> -->
+      <!-- <a href="adminsupport.html"><i class="fas fa-headset"></i> Support</a> -->
+   </nav>
+</div>
+
+<section class="dashboard">
+   <h1 class="heading">Manage Students</h1>
+   <div class="boxcontainer">
+      <div class="boxadmin">
+         <h3 class="title">Add New Student</h3>
+         <form id="/admin/add-student" method="post">
+            <input type="text" id="studentfName" name="sfname" placeholder="Student First Name" required>
+            <input type="text" id="studentlName" name="slname" placeholder="Student last Name" required>
+            <input type="email" id="studentEmail" name =email placeholder="Student Email" required>
+            <button type="submit" onclick="addStudent()">Add Student</button>
+         </form>
+      </div>
+      <div class="boxadmin">
+         <h3 class="title">Current Students</h3>
+         <ul id="studentList">
+            <!-- List items will be dynamically inserted here -->
+         </ul>
+      </div>
+   </div>
+</section>
+
+<footer class="footer">
+   &copy; DigiLearn.inc
+</footer>
+
+<script>
+function addStudent() {
+    const fname = document.getElementById('studentfName').value;
+    const lname = document.getElementById('studentlName').value;
+    const email = document.getElementById('studentEmail').value;
+    const list = document.getElementById('studentList');
+    const li = document.createElement('li');
+    li.textContent = `${fname} ${lname} (${email})`; // Corrected reference to include last name
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
+    removeBtn.onclick = function() { removeStudent(li); };
+    li.appendChild(removeBtn);
+    list.appendChild(li);
+}
+
+function removeStudent(li) {
+    li.parentNode.removeChild(li);
+    // Optionally, add a fetch call here to notify the server of the deletion
+}
+
+document.addEventListener('DOMContentLoaded', fetchStudents);
+const form = document.getElementById('add-student-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+        addStudent();
+    });
+</script>
+
+<!-- Custom JS link -->
+<script src="../../script/designscript.js"></script>
+
+
+</body>
+</html>

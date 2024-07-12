@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Online Peer Group Login</title>
+    <style>
+     
+/*       
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+}
+
+.login {
+    display: block;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #665eff;
+    outline: none;
+}
+
+button.login-btn, button.new-account {
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #665eff;
+    text-align: center;
+}
+
+button.new-account {
+    background-color: #4CAF50;
+    margin-top: 20px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+    color: #665eff;
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+}
+
+div.style {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #666;
+} */
+
+    
+        </style>
+</head>
+<body>
+   
+    <div class="main">
+        <div class="container">
+            
+            <form method="POST" >
+            <span class="login">Login to DigiLearn.inc</span>
+            <input type="email"  name="email" placeholder="Email address">           
+            <input type="password" name="password" id="pass" placeholder="Password">
+            <select name="role" id="role-select" class="role-select">
+                <option value="">Select your role</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        </form>  
+            <a href="account.html">Forgotten account?</a>
+            <div class="style">or</div>
+        </form>
+            <button class="new-account" onclick="location.href='../signup.html';">Create Account</button>
+        </div>
+    </div>
+    <script src="/script/login.js"></script> -->
+    <script>
+        function login() {
+            var role = document.getElementById('role-select').value;
+            var url = '';
+            switch (role) {
+                case 'student':
+                    url = '/studentdashboard';
+                    break;
+                case 'teacher':
+                    url = '../teacher/teacherdashboard.html';
+                    break;
+                case 'admin':
+                    url = '../admin/admindashboard.html';
+                    break;
+                default:
+                    alert('Please select your role.');
+                    return;
+            }
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

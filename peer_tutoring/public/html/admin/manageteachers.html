@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Manage Teachers</title>
+   <!-- Font Awesome for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- Custom CSS link -->
+   <link rel="stylesheet" href="../../css/style2.css">
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="admindashboard.html" class="logo">DigiLearn.inc</a>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+      <div class="profile">
+         <img src="../../../media/admin-pic.jpg" class="image" alt="Admin Picture">
+         <h3 class="name">Admin Name</h3>
+         <p class="role">Administrator</p>
+         <a href="profile.html" class="btn">view profile</a>
+      </div>
+   </section>
+</header>   
+
+<div class="side-bar">
+   <div id="close-btn"><i class="fas fa-times"></i></div>
+   <div class="profile">
+         <img src="../../../media/pic-1.jpg" class="image" alt="Admin Picture">
+         <h3 class="name">Admin Name</h3>
+         <p class="role">Administrator</p>
+         <a href="profile.html" class="btn">view profile</a>
+      </div>
+   <nav class="navbar">
+      <a href="admindashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+      <a href="managestudents.html"><i class="fas fa-user-graduate"></i> Manage Students</a>
+      <a href="manageteachers.html" class="active"><i class="fas fa-chalkboard-teacher"></i> Manage Teachers</a>
+      <!-- <a href="managecourses.html"><i class="fas fa-graduation-cap"></i> Manage Courses</a> -->
+      <!-- <a href="adminsupport.html"><i class="fas fa-headset"></i> Support</a> -->
+   </nav>
+</div>
+
+<section class="dashboard">
+   <h1 class="heading">Manage Teachers</h1>
+   <div class="boxcontainer">
+      <div class="boxadmin">
+         <h3 class="title">Add New Teacher</h3>
+         <form id="/admin/add-teacher" method="post">
+            <input type="text" id="teacherfName" name=tfname placeholder="Teacher first Name" required>
+            <input type="text" id="teacherlName" name=tlname placeholder="Teacher last Name" required>
+            <input type="email" id="teacherEmail" name="email" placeholder="Teacher Email" required>
+            
+            <input type="text" id="tsubject" name="tsubject" placeholder="Teacher subject" required>
+            <button type="submit" onclick="addTeacher()">Add Teacher</button>
+         </form>
+      </div>
+      <div class="boxadmin">
+         <h3 class="title">Current Teachers</h3>
+         <ul id="teacherList">
+            <!-- List items will be dynamically inserted here -->
+         </ul>
+      </div>
+   </div>
+</section>
+
+<footer class="footer">
+   &copy; DigiLearn.inc
+</footer>
+
+<script>
+function addTeacher() {
+    const name = document.getElementById('teacherName').value;
+    const email = document.getElementById('teacherEmail').value;
+    const list = document.getElementById('teacherList');
+    const li = document.createElement('li');
+    li.textContent = name + ' (' + email + ')';
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
+    removeBtn.onclick = function() { removeTeacher(li); };
+    li.appendChild(removeBtn);
+    list.appendChild(li);
+}
+
+function removeTeacher(li) {
+    li.parentNode.removeChild(li);
+    // Optionally make a fetch call to delete from the server here
+}
+
+function fetchTeachers() {
+    // This function should fetch data from a server
+    // Mock data
+    const teachers = [
+        { name: 'Mr. John Smith', email: 'johnsmith@example.com' },
+        { name: 'Ms. Jane Doe', email: 'janedoe@example.com' }
+    ];
+    const list = document.getElementById('teacherList');
+    teachers.forEach(teacher => {
+        const li = document.createElement('li');
+        li.textContent = teacher.name + ' (' + teacher.email + ')';
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove';
+        removeBtn.onclick = function() { removeTeacher(li); };
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', fetchTeachers);
+</script>
+
+<!-- Custom JS link -->
+<script src="../../script/designscript.js"></script>
+
+
+</body>
+</html>

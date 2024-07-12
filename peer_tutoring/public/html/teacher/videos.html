@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Manage Videos</title>
+   <!-- Font Awesome for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- Custom CSS link -->
+   <link rel="stylesheet" href="../../css/style2.css">
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="teacherdashboard.html" class="logo">DigiLearn.inc</a>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+      <div class="profile">
+         <img src="../../../media/pic-4.jpg" class="image" alt="Admin Picture">
+         <h3 class="name">Teacher Name</h3>
+         <p class="role">Teacher</p>
+         <a href="profile.html" class="btn">view profile</a>
+      </div>
+   </section>
+</header>   
+
+<div class="side-bar">
+   <div id="close-btn"><i class="fas fa-times"></i></div>
+   <div class="profile">
+    <img src="../../../media/pic-4.jpg" class="image" alt="Admin Picture">
+    <h3 class="name">Teacher Name</h3>
+    <p class="role">Teacher</p>
+    <a href="profile.html" class="btn">view profile</a>
+ </div>
+   <nav class="navbar">
+    <a href="teacherdashboard.html"><i class="fas fa-home"></i><span>dashboard</span></a>
+    <!-- <a href="managecourses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a> -->
+    <a href="assignment.html"><i class="fas fa-book"></i><span>assignments</span></a>
+    <a href="tutorial.html"><i class="fas fa-file-pdf"></i><span>tutorials</span></a>
+    <a href="videos.html"><i class="fas fa-video"></i><span>videos</span></a>
+    <!-- <a href="../contact.html"><i class="fas fa-headset"></i><span>support</span></a> -->
+   </nav>
+</div>
+
+<section class="dashboard">
+   <h1 class="heading">Video Management</h1>
+   <div class="boxadmin">
+      <h3 class="title">Upload New Video</h3>
+      <form action="videos.html" method="post" enctype="multipart/form-data">
+         <input type="file" name="videos" id="videoFile" accept="video/*" required>
+         <input type="text" name="title" id="videoTitle" placeholder="Video Title" required>
+         <button type="submit">Upload Video</button>
+      </form>
+   </div>
+   <div class="boxadmin">
+      <h3 class="title">Current Videos</h3>
+      <ul id="videoList">
+        <!-- Dynamically populated list of videos -->
+      </ul>
+   </div>
+</section>
+
+<footer class="footer">
+   &copy; DigiLearn.inc
+</footer>
+
+<script>
+// function uploadVideo() {
+//     const file = document.getElementById('videoFile').files[0];
+//     const title = document.getElementById('videoTitle').value;
+//     const formData = new FormData();
+//     formData.append('file', file);
+//     formData.append('title', title);
+
+//     fetch('/upload_video', {
+//         method: 'POST',
+//         body: formData
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//         alert('Video uploaded successfully');
+//         // Optionally, append video to the video list
+//         addVideoToList(title);
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         alert('Error uploading video');
+//     });
+// }
+
+// function addVideoToList(title) {
+//     const list = document.getElementById('videoList');
+//     const li = document.createElement('li');
+//     li.textContent = title;
+//     const removeBtn = document.createElement('button');
+//     removeBtn.textContent = 'Remove';
+//     removeBtn.onclick = function() { removeVideo(li); };
+//     li.appendChild(removeBtn);
+//     list.appendChild(li);
+// }
+
+// function removeVideo(li) {
+//     // Assuming a backend endpoint '/delete_video'
+//     const title = li.textContent.replace('Remove', '').trim();
+//     fetch(`/delete_video?title=${encodeURIComponent(title)}`, {
+//         method: 'DELETE'
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Delete successful:', data);
+//         li.parentNode.removeChild(li);
+//     })
+//     .catch(error => console.error('Error deleting video:', error));
+// }
+
+// function fetchVideos() {
+//     // Mock fetching videos
+//     const videos = [
+//         { title: 'Intro to HTML', id: 1 },
+//         { title: 'Advanced CSS', id: 2 },
+//         { title: 'JavaScript Basics', id: 3 }
+//     ];
+//     const list = document.getElementById('videoList');
+//     videos.forEach(video => {
+//         addVideoToList(video.title);
+//     });
+// }
+
+// document.addEventListener('DOMContentLoaded', fetchVideos);
+</script>
+
+<!-- Custom JS link -->
+<script src="../../script/designscript.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Admin Dashboard</title>
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../../css/style2.css">
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="admindashboard.html" class="logo">DigiLearn.inc</a>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+      <div class="profile">
+         <img src="../../../media/pic-1.jpg" class="image" alt="">
+         <h3 class="name">Admin Name</h3>
+         <p class="role">Administrator</p>
+         <a href="profile.html" class="btn">view profile</a>
+      </div>
+   </section>
+</header>   
+
+<div class="side-bar">
+  
+   <div id="close-btn"><i class="fas fa-times"></i></div>
+   <div class="profile">
+    <img src="../../../media/pic-1.jpg" class="image" alt="">
+    <h3 class="name">Admin Name</h3>
+    <p class="role">Administrator</p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="admindashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+      <a href="managestudents.html"><i class="fas fa-user-graduate"></i> <span>Manage Students</span></a>
+      <a href="manageteachers.html"><i class="fas fa-chalkboard-teacher"></i> <span>Manage Teachers</span></a>
+      <!-- <a href="managecourses.html"><i class="fas fa-graduation-cap"></i><span>Manage Courses</span> </a> -->
+      <!-- <a href="adminsupport.html"><i class="fas fa-headset"></i><span> Support</span></a> -->
+   </nav>
+</div>
+
+<section class="dashboard">
+   <h1 class="heading">Admin Dashboard</h1>
+   <div class="boxcontainer">
+      <!-- <div class="boxadmin">
+         <h3 class="title">Manage Courses</h3>
+         <p>View and update all courses within the system.</p>
+         <button onclick="window.location.href='managecourses.html'">Go to Courses</button>
+      </div> -->
+      <div class="boxadmin">
+         <h3 class="title">Manage Teachers</h3>
+         <p>Review and manage teacher accounts and privileges.</p>
+         <button onclick="window.location.href='manageteachers.html'">Go to Teachers</button>
+      </div>
+      <div class="boxadmin">
+         <h3 class="title">Manage Students</h3>
+         <p>Oversee student enrollment and performance.</p>
+         <button onclick="window.location.href='managestudents.html'">Go to Students</button>
+      </div>
+      <!-- <div class="boxadmin">
+         <h3 class="title">Support Queries</h3>
+         <p>Handle incoming support requests and issues.</p>
+         <button onclick="window.location.href='adminsupport.html'">Go to Support</button>
+      </div> -->
+   </div>
+</section>
+
+<footer class="footer">
+   &copy; DigiLearn.inc
+</footer>
+
+<!-- custom js file link  -->
+<script src="../../script/designscript.js"></script>
+
+
+</body>
+</html>
